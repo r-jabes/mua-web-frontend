@@ -28,8 +28,13 @@ export const nav = {
       children: [
         { label: "Liability", href: "/business/liability" },
         { label: "Property", href: "/business/property" },
+        {
+          label: "Property additional covers",
+          href: "/business/property/additional-covers",
+        },
         { label: "Commercial Vehicle", href: "/business/commercial-vehicle" },
         { label: "Transport", href: "/business/transport" },
+        { label: "More business covers", href: "/business/more" },
         {
           label: "Special & Financial Risks",
           href: "/business/more/special-financial-risks",
@@ -39,7 +44,7 @@ export const nav = {
     { label: "Claims", href: "/make-a-claim" },
     {
       label: "Support",
-      href: "/#support",
+      href: "/contact-us",
       children: [
         { label: "Contact us", href: "/contact-us" },
         { label: "Customer Care", href: "/customer-care" },
@@ -298,6 +303,8 @@ export const footer = {
   company: [
     { label: "About us", href: "/about-us" },
     { label: "MUA in Africa", href: "/mua-in-africa" },
+    { label: "Agents & partners", href: "/agents" },
+    { label: "Social purpose", href: "/social-purpose" },
     { label: "Investors", href: "/investors" },
     { label: "Careers", href: "/career" },
     { label: "News", href: "/news/blog" },

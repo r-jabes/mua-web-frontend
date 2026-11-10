@@ -12,9 +12,9 @@ type Props = {
   columns?: 2 | 3;
 };
 
-export function HubCards({ items, columns = 3 }: Props) {
+export function HubCards({ items }: Props) {
   return (
-    <div className={columns === 2 ? styles.grid2 : styles.grid3}>
+    <div className={styles.hubGrid}>
       {items.map((item) => (
         <Link key={item.href} href={item.href} className={styles.cardLink}>
           <h3>{item.title}</h3>

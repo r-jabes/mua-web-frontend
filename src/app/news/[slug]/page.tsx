@@ -37,22 +37,21 @@ export default async function NewsArticlePage({ params }: Props) {
         ]}
       />
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionCompact}`}>
         <div className="container">
-          <div className={styles.split}>
-            <div className={styles.prose}>
-              {article.body.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-            <div className={styles.newsMedia} style={{ minHeight: "16rem" }}>
-              <Image
-                src={article.image.src}
-                alt={article.image.alt}
-                fill
-                sizes="(max-width: 900px) 100vw, 40vw"
-              />
-            </div>
+          <div className={styles.articleMedia}>
+            <Image
+              src={article.image.src}
+              alt={article.image.alt}
+              fill
+              sizes="(max-width: 900px) 100vw, 72rem"
+              priority
+            />
+          </div>
+          <div className={styles.prose}>
+            {article.body.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
         </div>
       </section>

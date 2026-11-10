@@ -24,13 +24,13 @@ export default function SocialPurposePage() {
         ]}
       />
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionCompact}`}>
         <div className="container">
           <div className={styles.prose}>
             <p>{socialPurpose.body}</p>
             <p>{socialPurpose.local}</p>
           </div>
-          <div style={{ marginTop: "var(--space-5)" }}>
+          <div className={styles.noteStack}>
             <VerificationNote>{socialPurpose.note}</VerificationNote>
           </div>
         </div>

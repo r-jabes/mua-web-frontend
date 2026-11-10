@@ -37,12 +37,17 @@ export function PageHero({
       <div className={styles.heroInner}>
         {crumbs?.length ? (
           <ol className={styles.breadcrumb}>
-            {crumbs.map((crumb) => (
-              <li key={crumb.label}>
+            {crumbs.map((crumb, index) => (
+              <li key={`${crumb.label}-${index}`}>
+                {index > 0 ? (
+                  <span className={styles.breadcrumbSep} aria-hidden>
+                    /
+                  </span>
+                ) : null}
                 {crumb.href ? (
                   <Link href={crumb.href}>{crumb.label}</Link>
                 ) : (
-                  <span>{crumb.label}</span>
+                  <span aria-current="page">{crumb.label}</span>
                 )}
               </li>
             ))}

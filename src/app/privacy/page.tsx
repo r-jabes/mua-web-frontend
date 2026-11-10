@@ -20,12 +20,12 @@ export default function PrivacyPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "Privacy" }]}
       />
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionCompact}`}>
         <div className="container">
           <div className={styles.prose}>
             <p>{legal.privacy.body}</p>
           </div>
-          <div style={{ marginTop: "var(--space-5)" }}>
+          <div className={styles.noteStack}>
             <VerificationNote>
               Replace this placeholder with an approved Rwanda privacy notice from MUA before launch.
             </VerificationNote>

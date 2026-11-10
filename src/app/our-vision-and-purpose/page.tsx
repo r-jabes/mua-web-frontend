@@ -25,21 +25,23 @@ export default function ValuesPage() {
         primaryCta={{ label: "About MUA Rwanda", href: "/about-us" }}
       />
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionCompact}`}>
         <div className="container">
-          <div className={styles.grid2}>
+          <div className={styles.split}>
             <article className={styles.block}>
               <h3>Purpose</h3>
               <p>{values.purpose}</p>
             </article>
-            <article className={styles.block}>
-              <h3>Value creation pillars</h3>
-              <ul className={styles.list}>
-                {values.pillars.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
+            <aside className={styles.rail}>
+              <div>
+                <h3>Value creation pillars</h3>
+                <ul className={styles.list}>
+                  {values.pillars.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
@@ -50,14 +52,14 @@ export default function ValuesPage() {
             <p className="eyebrow">Values</p>
             <h2 className="section-title">How we work</h2>
           </div>
-          <ul className={styles.grid3} style={{ listStyle: "none", padding: 0, margin: 0 }}>
+          <ul className={styles.valueGrid}>
             {values.valueList.map((item) => (
               <li key={item} className={styles.block}>
                 <h3>{item}</h3>
               </li>
             ))}
           </ul>
-          <div style={{ marginTop: "var(--space-6)" }}>
+          <div className={styles.noteStack}>
             <VerificationNote tone="info">{values.note}</VerificationNote>
           </div>
         </div>

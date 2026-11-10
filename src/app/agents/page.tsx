@@ -27,24 +27,33 @@ export default function AgentsPage() {
         }}
       />
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionCompact}`}>
         <div className="container">
           <div className={styles.split}>
-            <div className={styles.prose}>
-              <p>{agentsPage.body}</p>
+            <div>
+              <div className={styles.sectionHeader}>
+                <p className="eyebrow">Opportunity</p>
+                <h2 className="section-title">Grow with MUA Rwanda</h2>
+              </div>
+              <div className={styles.prose}>
+                <p>{agentsPage.body}</p>
+              </div>
               <ul className={styles.list}>
                 {agentsPage.points.map((point) => (
                   <li key={point}>{point}</li>
                 ))}
               </ul>
             </div>
-            <StepsList steps={agentsPage.how} />
-          </div>
-          <div style={{ marginTop: "var(--space-6)" }}>
-            <VerificationNote tone="info">
-              This page does not introduce an agent-management portal or proposed digital services that are
-              not already published by MUA.
-            </VerificationNote>
+            <aside className={styles.rail}>
+              <div>
+                <h3>How to get started</h3>
+              </div>
+              <StepsList steps={agentsPage.how} />
+              <VerificationNote tone="info">
+                This page does not introduce an agent-management portal or proposed digital services
+                that are not already published by MUA.
+              </VerificationNote>
+            </aside>
           </div>
         </div>
       </section>

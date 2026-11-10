@@ -24,7 +24,7 @@ export default function LeadershipPage() {
         ]}
       />
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionCompact}`}>
         <div className="container">
           <div className={styles.sectionHeader}>
             <p className="eyebrow">Board</p>
@@ -56,7 +56,7 @@ export default function LeadershipPage() {
               </article>
             ))}
           </div>
-          <div style={{ marginTop: "var(--space-6)" }}>
+          <div className={styles.noteStack}>
             <VerificationNote>{leadership.note}</VerificationNote>
           </div>
         </div>

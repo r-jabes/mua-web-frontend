@@ -20,16 +20,16 @@ export default function DataProtectionPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "Data protection" }]}
       />
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionCompact}`}>
         <div className="container">
-          <ul className={styles.grid2} style={{ listStyle: "none", padding: 0, margin: 0 }}>
+          <ul className={`${styles.bareGrid} ${styles.cols2}`}>
             {legal.dataProtection.rights.map((right) => (
               <li key={right} className={styles.block}>
                 <h3>{right}</h3>
               </li>
             ))}
           </ul>
-          <div style={{ marginTop: "var(--space-6)" }}>
+          <div className={styles.noteStack}>
             <VerificationNote>{legal.dataProtection.note}</VerificationNote>
           </div>
         </div>

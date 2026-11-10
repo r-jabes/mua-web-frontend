@@ -38,7 +38,7 @@ export default function PersonalHubPage() {
             </p>
           </div>
           <HubCards items={personalHub} />
-          <div style={{ marginTop: "var(--space-6)" }}>
+          <div className={styles.noteStack}>
             <VerificationNote>
               Individual Personal Accident, Tulizo Bora Health and Life product pages are not published
               with sufficient verified Rwanda wording yet, so they are intentionally omitted from this hub.

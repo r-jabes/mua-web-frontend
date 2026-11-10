@@ -20,12 +20,12 @@ export default function InvestorsPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "Investors" }]}
       />
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionCompact}`}>
         <div className="container">
           <div className={styles.prose}>
             <p>{investors.body}</p>
           </div>
-          <div className={styles.grid2} style={{ marginTop: "var(--space-6)" }}>
+          <div className={`${styles.hubGrid} ${styles.stackGap}`}>
             {investors.links.map((link) => (
               <a key={link.href} href={link.href} className={styles.cardLink}>
                 <h3>{link.label}</h3>
@@ -33,7 +33,7 @@ export default function InvestorsPage() {
               </a>
             ))}
           </div>
-          <div style={{ marginTop: "var(--space-6)" }}>
+          <div className={styles.noteStack}>
             <VerificationNote tone="info">{investors.note}</VerificationNote>
           </div>
         </div>

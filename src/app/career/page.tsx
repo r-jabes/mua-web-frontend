@@ -28,15 +28,24 @@ export default function CareersPage() {
         }}
       />
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionCompact}`}>
         <div className="container">
           <div className={styles.split}>
-            <div className={styles.prose}>
-              <p className="eyebrow">Why MUA</p>
-              <h2 className="section-title">Build a career in insurance</h2>
-              <p>{careers.why}</p>
+            <div>
+              <div className={styles.sectionHeader}>
+                <p className="eyebrow">Why MUA</p>
+                <h2 className="section-title">Build a career in insurance</h2>
+              </div>
+              <div className={styles.prose}>
+                <p>{careers.why}</p>
+              </div>
             </div>
-            <StepsList steps={careers.steps} />
+            <aside className={styles.rail}>
+              <div>
+                <h3>Application path</h3>
+              </div>
+              <StepsList steps={careers.steps} />
+            </aside>
           </div>
         </div>
       </section>

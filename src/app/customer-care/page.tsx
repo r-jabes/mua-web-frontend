@@ -28,9 +28,9 @@ export default function CustomerCarePage() {
         }}
       />
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionCompact}`}>
         <div className="container">
-          <div className={styles.grid2}>
+          <div className={styles.split}>
             <article className={styles.block}>
               <h3>Feedback</h3>
               <p>
@@ -40,29 +40,28 @@ export default function CustomerCarePage() {
                 </a>
               </p>
               <p>
-                Phone:{" "}
-                <a href={customerCare.phoneHref}>{customerCare.phone}</a>
+                Phone: <a href={customerCare.phoneHref}>{customerCare.phone}</a>
               </p>
               <p>{customerCare.philosophy}</p>
             </article>
-            <article className={styles.block}>
-              <h3>Complaints</h3>
-              <p>
-                Email:{" "}
-                <a href={`mailto:${customerCare.complaintEmail}`}>
-                  {customerCare.complaintEmail}
-                </a>
-              </p>
-              <p>Include the following details when you write:</p>
-              <ul className={styles.list}>
-                {customerCare.checklist.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
-          </div>
-          <div style={{ marginTop: "var(--space-6)" }}>
-            <VerificationNote>{customerCare.note}</VerificationNote>
+            <aside className={styles.rail}>
+              <div>
+                <h3>Complaints</h3>
+                <p>
+                  Email:{" "}
+                  <a href={`mailto:${customerCare.complaintEmail}`}>
+                    {customerCare.complaintEmail}
+                  </a>
+                </p>
+                <p>Include the following details when you write:</p>
+                <ul className={styles.list}>
+                  {customerCare.checklist.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <VerificationNote>{customerCare.note}</VerificationNote>
+            </aside>
           </div>
         </div>
       </section>

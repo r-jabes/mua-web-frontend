@@ -25,12 +25,12 @@ export default function AfricaPage() {
         image={{ src: "/images/news-2.jpg", alt: "MUA across Africa" }}
       />
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionCompact}`}>
         <div className="container">
           <div className={styles.prose}>
             <p>{africa.narrative}</p>
           </div>
-          <div className={styles.grid3} style={{ marginTop: "var(--space-6)" }}>
+          <div className={`${styles.grid3} ${styles.stackGap}`}>
             {africa.countries.map((country) => (
               <div className={styles.block} key={country}>
                 <h3>{country}</h3>
@@ -38,7 +38,7 @@ export default function AfricaPage() {
               </div>
             ))}
           </div>
-          <div style={{ marginTop: "var(--space-6)", display: "grid", gap: "var(--space-3)" }}>
+          <div className={styles.noteStack}>
             {africa.notes.map((note) => (
               <VerificationNote key={note.text}>{note.text}</VerificationNote>
             ))}

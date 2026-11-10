@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   description: contactPage.lead,
 };
 
+const pointsOfPresence = contactPage.locations.filter(
+  (location) => location.name !== "Head Office",
+);
+
 export default function ContactPage() {
   return (
     <main id="main">
@@ -22,10 +26,11 @@ export default function ContactPage() {
         secondaryCta={{ label: "Email us", href: contactPage.hq.emailHref }}
       />
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionCompact}`}>
         <div className="container">
           <div className={styles.split}>
-            <article className={styles.block}>
+            <div className={styles.hqFeature}>
+              <p className="eyebrow">Primary contact</p>
               <h3>{contactPage.hq.name}</h3>
               {contactPage.hq.address.map((line) => (
                 <p key={line}>{line}</p>
@@ -36,24 +41,24 @@ export default function ContactPage() {
               <p>
                 <a href={contactPage.hq.emailHref}>{contactPage.hq.email}</a>
               </p>
-            </article>
-            <div className={styles.block}>
-              <h3>Quick journeys</h3>
-              <ul className={styles.list}>
-                <li>
-                  <a href="/make-a-claim">Make a claim</a>
-                </li>
-                <li>
-                  <a href="/customer-care">Customer Care</a>
-                </li>
-                <li>
-                  <a href="/agents">Agents & partners</a>
-                </li>
-                <li>
-                  <a href="/#quote">Get a quote</a>
-                </li>
-              </ul>
             </div>
+            <aside>
+              <p className="eyebrow">Quick journeys</p>
+              <div className={styles.quickLinks}>
+                <a href="/make-a-claim">
+                  Make a claim <span>→</span>
+                </a>
+                <a href="/customer-care">
+                  Customer Care <span>→</span>
+                </a>
+                <a href="/agents">
+                  Agents & partners <span>→</span>
+                </a>
+                <a href="/#quote">
+                  Get a quote <span>→</span>
+                </a>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
@@ -63,9 +68,13 @@ export default function ContactPage() {
           <div className={styles.sectionHeader}>
             <p className="eyebrow">Locations</p>
             <h2 className="section-title">Offices and points of presence</h2>
+            <p className="section-lead">
+              Published contacts across Kigali and regional points. Confirm branch versus outlet status
+              with MUA where noted.
+            </p>
           </div>
           <div className={styles.locations}>
-            {contactPage.locations.map((location) => (
+            {pointsOfPresence.map((location) => (
               <article className={styles.location} key={location.name}>
                 <h3>{location.name}</h3>
                 <p>{location.address}</p>
@@ -76,7 +85,7 @@ export default function ContactPage() {
               </article>
             ))}
           </div>
-          <div style={{ marginTop: "var(--space-6)" }}>
+          <div className={styles.noteStack}>
             <VerificationNote>{contactPage.note}</VerificationNote>
           </div>
         </div>

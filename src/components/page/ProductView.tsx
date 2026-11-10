@@ -18,7 +18,7 @@ export function ProductView({ product }: { product: ProductPage }) {
         secondaryCta={{ label: "Make a claim", href: "/make-a-claim" }}
       />
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionCompact}`}>
         <div className="container">
           <div className={styles.split}>
             <div>
@@ -28,9 +28,14 @@ export function ProductView({ product }: { product: ProductPage }) {
                   <h2 className="section-title">Designed for</h2>
                   <p className="section-lead">{product.designedFor}</p>
                 </div>
-              ) : null}
+              ) : (
+                <div className={styles.sectionHeader}>
+                  <p className="eyebrow">Cover detail</p>
+                  <h2 className="section-title">What this cover includes</h2>
+                </div>
+              )}
 
-              <div className={styles.grid2}>
+              <div className={styles.coverStack}>
                 {product.covers.map((cover) => (
                   <article className={styles.block} key={cover.title}>
                     <h3>{cover.title}</h3>
@@ -47,9 +52,9 @@ export function ProductView({ product }: { product: ProductPage }) {
               </div>
             </div>
 
-            <aside className={styles.grid2} style={{ gridTemplateColumns: "1fr" }}>
+            <aside className={styles.rail}>
               {product.benefits?.length ? (
-                <div className={styles.block}>
+                <div>
                   <h3>Key benefits</h3>
                   <ul className={styles.list}>
                     {product.benefits.map((item) => (
@@ -59,7 +64,7 @@ export function ProductView({ product }: { product: ProductPage }) {
                 </div>
               ) : null}
 
-              <div className={styles.block}>
+              <div>
                 <h3>How to obtain cover</h3>
                 <ul className={styles.list}>
                   {product.howToObtain.map((item) => (
@@ -77,15 +82,13 @@ export function ProductView({ product }: { product: ProductPage }) {
           </div>
 
           {product.related?.length ? (
-            <div style={{ marginTop: "var(--space-7)" }}>
+            <div className={styles.stackGap}>
               <p className="eyebrow">Related</p>
-              <h2 className="section-title" style={{ marginBottom: "var(--space-4)" }}>
-                Explore related covers
-              </h2>
+              <h2 className="section-title">Explore related covers</h2>
               <div className={styles.related}>
                 {product.related.map((item) => (
-                  <Link key={item.href} href={item.href} className={styles.cardLink}>
-                    <h3>{item.label}</h3>
+                  <Link key={item.href} href={item.href}>
+                    {item.label}
                     <span>View →</span>
                   </Link>
                 ))}

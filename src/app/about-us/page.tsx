@@ -23,7 +23,7 @@ export default function AboutPage() {
         secondaryCta={{ label: "Our values", href: "/our-vision-and-purpose" }}
       />
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionCompact}`}>
         <div className="container">
           <div className={styles.split}>
             <div className={styles.prose}>
@@ -32,14 +32,16 @@ export default function AboutPage() {
               <p>{about.overview}</p>
               <p>{about.partnerships}</p>
             </div>
-            <div className={styles.block}>
-              <h3>Strengths</h3>
-              <ul className={styles.list}>
-                {about.strengths.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
+            <aside className={styles.rail}>
+              <div>
+                <h3>Strengths</h3>
+                <ul className={styles.list}>
+                  {about.strengths.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
@@ -58,7 +60,7 @@ export default function AboutPage() {
               </li>
             ))}
           </ol>
-          <div style={{ marginTop: "var(--space-6)" }}>
+          <div className={styles.noteStack}>
             {about.glanceNotes.map((note) => (
               <VerificationNote key={note.text}>{note.text}</VerificationNote>
             ))}

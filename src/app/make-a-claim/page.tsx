@@ -23,7 +23,7 @@ export default function ClaimsPage() {
         secondaryCta={{ label: "Call claims", href: claimsPage.phoneHref }}
       />
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.sectionCompact}`}>
         <div className="container">
           <div className={styles.split}>
             <div>
@@ -31,25 +31,23 @@ export default function ClaimsPage() {
                 <p className="eyebrow">Process</p>
                 <h2 className="section-title">How claiming works</h2>
                 <p className="section-lead">
-                  A practical journey based on published claims contacts and form guidance. This is not a fake
-                  submission backend.
+                  Practical guidance based on published claims contacts and form fields. Submission
+                  continues on the existing MUA claim form — this site does not fake a backend.
                 </p>
               </div>
               <StepsList steps={claimsPage.steps} />
             </div>
-            <aside className={styles.grid2} style={{ gridTemplateColumns: "1fr" }}>
-              <div className={styles.block}>
+            <aside className={styles.rail}>
+              <div>
                 <h3>Claims contacts</h3>
                 <p>
-                  Phone:{" "}
-                  <a href={claimsPage.phoneHref}>{claimsPage.phone}</a>
+                  Phone: <a href={claimsPage.phoneHref}>{claimsPage.phone}</a>
                 </p>
                 <p>
-                  Email:{" "}
-                  <a href={claimsPage.emailHref}>{claimsPage.email}</a>
+                  Email: <a href={claimsPage.emailHref}>{claimsPage.email}</a>
                 </p>
               </div>
-              <div className={styles.block}>
+              <div>
                 <h3>Uploads</h3>
                 <p>{claimsPage.uploadNote}</p>
               </div>
