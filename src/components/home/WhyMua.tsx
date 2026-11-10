@@ -14,7 +14,7 @@ const strengthHints = [
 export function WhyMua() {
   const introRef = useReveal();
   const journeyRef = useReveal();
-  const strengthsRef = useReveal();
+  const strengthsRef = useReveal<HTMLUListElement>();
 
   return (
     <section id="company" className={styles.section} aria-labelledby="why-title">
