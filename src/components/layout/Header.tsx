@@ -202,7 +202,10 @@ export function Header() {
                       }
                       return (
                         <details key={item.label}>
-                          <summary>{item.label}</summary>
+                          <summary>
+                            {item.label}
+                            <span className={styles.mobileChevron} aria-hidden />
+                          </summary>
                           {item.children.map((child) => (
                             <Link
                               key={child.href}
