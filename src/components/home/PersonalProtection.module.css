@@ -30,11 +30,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--dur-4) var(--ease-standard);
-}
-
-.chapter:hover .media img {
-  transform: scale(1.02);
 }
 
 .copy h3 {
@@ -92,8 +87,9 @@
 
 @media (min-width: 960px) {
   .chapter {
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: var(--space-7);
+    margin-bottom: var(--space-9);
   }
 
   .chapter:nth-child(even) .media {
@@ -105,12 +101,6 @@
   }
 
   .media {
-    min-height: 26rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .chapter:hover .media img {
-    transform: none;
+    min-height: 24rem;
   }
 }

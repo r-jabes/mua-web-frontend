@@ -39,8 +39,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${manrope.variable} ${nunito.variable}`}>
+    <html lang="en" className={`${manrope.variable} ${nunito.variable}`}>
+      <body>
         <a className="skip-link" href="#main">
           Skip to content
         </a>

@@ -31,12 +31,13 @@
 }
 
 .panel {
-  background: var(--mua-blue);
-  color: var(--mua-white);
+  background: var(--mua-mist);
+  color: var(--mua-ink);
   padding: var(--space-7) var(--space-6);
   display: grid;
   align-content: center;
   gap: var(--space-4);
+  border-top: 3px solid var(--mua-orange);
 }
 
 .panel h3 {
@@ -48,13 +49,13 @@
 
 .panel p {
   margin: 0;
-  color: #d7e0f5;
+  color: var(--mua-muted);
   line-height: var(--leading-relaxed);
 }
 
 @media (min-width: 900px) {
   .inner {
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.25fr 0.75fr;
     align-items: stretch;
   }
 }

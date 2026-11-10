@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
+import { createPortal } from "react-dom";
 import { nav } from "@/content/home";
 import { Button } from "@/components/ui/Button";
 import styles from "./Header.module.css";
@@ -11,13 +12,26 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const menuId = useId();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    let frame = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 8);
+      });
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -39,6 +53,7 @@ export function Header() {
   }, []);
 
   return (
+    <>
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.inner}>
         <Link href="/" className={styles.logo} aria-label="MUA Insurance Rwanda home">
@@ -114,99 +129,107 @@ export function Header() {
           </Button>
         </div>
 
-        <button
-          type="button"
-          className={styles.menuBtn}
-          aria-label="Open menu"
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen(true)}
-        >
-          <span />
-        </button>
+        <div className={styles.menuSlot}>
+          <button
+            type="button"
+            className={styles.menuBtn}
+            aria-label="Open menu"
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen(true)}
+          >
+            <span />
+          </button>
+        </div>
       </div>
 
-      {mobileOpen ? (
-        <div
-          className={`${styles.drawer} ${styles.drawerOpen}`}
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setMobileOpen(false);
-          }}
-        >
-          <div
-            className={styles.sheet}
-            role="dialog"
-            aria-modal="true"
-            aria-label="Mobile menu"
-          >
-            <div className={styles.sheetTop}>
-              <Image
-                src="/brand/mua-logo.svg"
-                alt=""
-                width={120}
-                height={38}
-              />
-              <button
-                type="button"
-                className={styles.close}
-                aria-label="Close menu"
-                onClick={() => setMobileOpen(false)}
-              >
-                ×
-              </button>
-            </div>
-
-            <div className={styles.mobileNav}>
-              {nav.primary.map((item) => {
-                const hasChildren = "children" in item && item.children;
-                if (!hasChildren) {
-                  return (
-                    <Link
-                      key={item.label}
-                      href={item.href}
+    </header>
+      {mounted && mobileOpen
+        ? createPortal(
+            <div
+              className={`${styles.drawer} ${styles.drawerOpen}`}
+              onClick={(e) => {
+                if (e.target === e.currentTarget) setMobileOpen(false);
+              }}
+            >
+              <div className={styles.drawerPanel}>
+                <div
+                  className={styles.sheet}
+                  role="dialog"
+                  aria-modal="true"
+                  aria-label="Mobile menu"
+                >
+                  <div className={styles.sheetTop}>
+                    <Image
+                      src="/brand/mua-logo.svg"
+                      alt=""
+                      width={120}
+                      height={38}
+                    />
+                    <button
+                      type="button"
+                      className={styles.close}
+                      aria-label="Close menu"
                       onClick={() => setMobileOpen(false)}
                     >
-                      {item.label}
-                    </Link>
-                  );
-                }
-                return (
-                  <details key={item.label}>
-                    <summary>{item.label}</summary>
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </details>
-                );
-              })}
-            </div>
+                      ×
+                    </button>
+                  </div>
 
-            <div className={styles.mobilePins}>
-              <Button
-                href={nav.utility.quote.href}
-                variant="primary"
-                fullWidth
-                onClick={() => setMobileOpen(false)}
-              >
-                Get a quote
-              </Button>
-              <Button
-                href="/make-a-claim"
-                variant="secondary"
-                fullWidth
-                onClick={() => setMobileOpen(false)}
-              >
-                Make a claim
-              </Button>
-            </div>
-          </div>
-        </div>
-      ) : null}
-    </header>
+                  <div className={styles.mobileNav}>
+                    {nav.primary.map((item) => {
+                      const hasChildren = "children" in item && item.children;
+                      if (!hasChildren) {
+                        return (
+                          <Link
+                            key={item.label}
+                            href={item.href}
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            {item.label}
+                          </Link>
+                        );
+                      }
+                      return (
+                        <details key={item.label}>
+                          <summary>{item.label}</summary>
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              onClick={() => setMobileOpen(false)}
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </details>
+                      );
+                    })}
+                  </div>
+
+                  <div className={styles.mobilePins}>
+                    <Button
+                      href={nav.utility.quote.href}
+                      variant="primary"
+                      fullWidth
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      Get a quote
+                    </Button>
+                    <Button
+                      href="/make-a-claim"
+                      variant="secondary"
+                      fullWidth
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      Make a claim
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>,
+            document.body,
+          )
+        : null}
+    </>
   );
 }

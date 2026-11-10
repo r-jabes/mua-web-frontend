@@ -44,10 +44,12 @@ export function FindUs() {
             </Button>
           </div>
         </div>
-        <div className={styles.map} aria-label="Map placeholder for Kigali head office">
+        <div className={styles.map} aria-label="Kigali head office location summary">
           <div>
-            <strong>Grand Pension Plaza</strong>
-            Interactive map loads on the Contact page to keep this homepage fast.
+            <strong>Kigali Head Office</strong>
+            Grand Pension Plaza · Ground &amp; 8th Floor
+            <br />
+            Full branch directory and map on Contact.
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ export function Footer() {
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
           <Image
+            className={styles.brandLogo}
             src="/brand/mua-logo.svg"
             alt="MUA Insurance Rwanda"
             width={140}

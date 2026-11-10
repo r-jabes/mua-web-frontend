@@ -14,8 +14,8 @@
   --mua-danger: #e1251b;
   --mua-focus: var(--mua-orange);
 
-  --font-display: var(--font-manrope), "Segoe UI", sans-serif;
-  --font-body: var(--font-nunito), "Segoe UI", sans-serif;
+  --font-display: var(--font-manrope), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: var(--font-nunito), "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -50,7 +50,7 @@
   --container-wide: 80rem;
   --container-narrow: 40rem;
   --gutter: clamp(1rem, 3vw, 2rem);
-  --section-y: clamp(3.5rem, 8vw, 7rem);
+  --section-y: clamp(3.25rem, 7vw, 6.25rem);
   --header-h: 4.5rem;
 
   --radius-sm: 0.25rem;
@@ -76,6 +76,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 0.75rem);
 }
 
 body {

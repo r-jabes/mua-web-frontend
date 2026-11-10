@@ -42,11 +42,6 @@
 
 .media img {
   object-fit: cover;
-  transition: transform var(--dur-4) var(--ease-standard);
-}
-
-.item a:hover .media img {
-  transform: scale(1.02);
 }
 
 .item h3 {
@@ -67,8 +62,3 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .item a:hover .media img {
-    transform: none;
-  }
-}

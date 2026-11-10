@@ -21,10 +21,10 @@
   width: min(100% - (var(--gutter) * 2), var(--container-wide));
   margin-inline: auto;
   min-height: var(--header-h);
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 .logo {
@@ -42,7 +42,9 @@
 .nav {
   display: none;
   align-items: center;
-  gap: 0.15rem;
+  justify-content: center;
+  gap: 0.1rem;
+  min-width: 0;
 }
 
 .item {
@@ -113,7 +115,14 @@
 .utility {
   display: none;
   align-items: center;
+  justify-content: flex-end;
   gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.menuSlot {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .menuBtn {
@@ -169,22 +178,33 @@
   pointer-events: auto;
 }
 
-.sheet {
+.drawerPanel {
   position: absolute;
-  inset: 0 0 0 auto;
-  width: min(100%, 22rem);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(100vw, 22rem);
   background: var(--mua-white);
-  padding: var(--space-5) var(--space-4) var(--space-6);
-  transform: translateX(100%);
+  display: flex;
+  flex-direction: column;
+  transform: translate3d(100%, 0, 0);
   transition: transform var(--dur-3) var(--ease-out);
+  box-shadow: var(--shadow-2);
+}
+
+.drawerOpen .drawerPanel {
+  transform: translate3d(0, 0, 0);
+}
+
+.sheet {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  padding: var(--space-5) var(--space-4) var(--space-6);
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
   overflow: auto;
-}
-
-.drawerOpen .sheet {
-  transform: translateX(0);
 }
 
 .sheetTop {
@@ -222,7 +242,16 @@
   display: none;
 }
 
-.mobileNav a {
+.mobileNav > a {
+  display: block;
+  padding: 0.9rem 0;
+  text-decoration: none;
+  color: var(--mua-ink);
+  font-weight: 700;
+  border-bottom: 1px solid var(--mua-line);
+}
+
+.mobileNav details a {
   display: block;
   padding: 0.55rem 0;
   text-decoration: none;
@@ -234,10 +263,15 @@
   margin-top: auto;
   display: grid;
   gap: var(--space-2);
-  position: sticky;
-  bottom: 0;
   padding-top: var(--space-4);
-  background: linear-gradient(to top, var(--mua-white) 70%, transparent);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1023px) {
+  .inner {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -246,7 +280,19 @@
     display: flex;
   }
 
-  .menuBtn {
+  .menuSlot {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .trigger,
+  .link {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.75rem;
+  }
+
+  .utility :global(a[class*="text"]) {
     display: none;
   }
 }
