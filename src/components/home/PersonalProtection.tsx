@@ -9,11 +9,19 @@ import styles from "./PersonalProtection.module.css";
 
 function Chapter({
   product,
+  index,
 }: {
   product: (typeof personalProducts)[number];
+  index: number;
 }) {
+  const ref = useReveal<HTMLElement>();
+
   return (
-    <article className={styles.chapter}>
+    <article
+      className={`${styles.chapter} reveal`}
+      ref={ref}
+      style={{ transitionDelay: `${index * 60}ms` }}
+    >
       <div className={styles.media}>
         <Image
           src={product.image.src}
@@ -21,8 +29,10 @@ function Chapter({
           fill
           sizes="(max-width: 960px) 100vw, 55vw"
         />
+        <div className={styles.mediaShade} aria-hidden />
       </div>
       <div className={styles.copy}>
+        <p className={styles.index}>0{index + 1}</p>
         <h3>{product.title}</h3>
         <p>{product.summary}</p>
         <ul className={styles.points}>
@@ -69,8 +79,8 @@ export function PersonalProtection() {
           </p>
         </header>
 
-        {personalProducts.map((product) => (
-          <Chapter key={product.id} product={product} />
+        {personalProducts.map((product, index) => (
+          <Chapter key={product.id} product={product} index={index} />
         ))}
       </div>
     </section>

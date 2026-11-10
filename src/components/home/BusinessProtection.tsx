@@ -38,14 +38,20 @@ export function BusinessProtection() {
             </Button>
           </div>
         </div>
-        <div className={styles.media}>
-          <Image
-            src="/images/news-1.jpg"
-            alt="Business and commercial insurance context"
-            fill
-            sizes="(max-width: 960px) 100vw, 45vw"
-          />
-        </div>
+        <aside className={styles.mediaRail}>
+          <div className={styles.media}>
+            <Image
+              src="/images/news-1.jpg"
+              alt="Business and commercial insurance context"
+              fill
+              sizes="(max-width: 960px) 100vw, 42vw"
+            />
+            <div className={styles.mediaCaption}>
+              <p>Business protection</p>
+              <span>Liability · Property · Motor · Transport</span>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
   );

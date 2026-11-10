@@ -7,11 +7,11 @@
 .grid {
   display: grid;
   gap: var(--space-7);
-  align-items: stretch;
+  align-items: start;
 }
 
 .copy .eyebrow {
-  color: var(--mua-orange);
+  color: #ffb089;
 }
 
 .copy .section-title {
@@ -20,6 +20,7 @@
 
 .copy .section-lead {
   color: #b0c0e2;
+  max-width: 34rem;
 }
 
 .list {
@@ -32,12 +33,14 @@
 
 .list a {
   display: grid;
-  gap: 0.35rem;
-  padding: 1.1rem 0;
+  gap: 0.4rem;
+  padding: 1.25rem 0;
   border-top: 1px solid rgb(255 255 255 / 14%);
   text-decoration: none;
   color: var(--mua-white);
-  transition: color var(--dur-1) var(--ease-standard);
+  transition:
+    color var(--dur-1) var(--ease-standard),
+    padding-left var(--dur-2) var(--ease-out);
 }
 
 .list li:last-child a {
@@ -45,7 +48,8 @@
 }
 
 .list a:hover {
-  color: var(--mua-orange);
+  color: #ffb089;
+  padding-left: 0.4rem;
 }
 
 .list strong {
@@ -64,22 +68,78 @@
   margin-top: var(--space-6);
 }
 
+.mediaRail {
+  width: 100%;
+}
+
 .media {
   position: relative;
   min-height: 20rem;
   overflow: hidden;
+  border-radius: 1.1rem 0 0 1.1rem;
+  isolation: isolate;
 }
 
 .media img {
   object-fit: cover;
+  transition: transform 700ms var(--ease-out);
+}
+
+.media:hover img {
+  transform: scale(1.04);
+}
+
+.mediaCaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--space-5);
+  background: linear-gradient(180deg, transparent, rgb(11 31 77 / 88%));
+}
+
+.mediaCaption p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-md);
+}
+
+.mediaCaption span {
+  display: block;
+  margin-top: 0.35rem;
+  color: #c5d0ea;
+  font-size: var(--text-sm);
 }
 
 @media (min-width: 960px) {
   .grid {
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
+    gap: var(--space-8);
+  }
+
+  .mediaRail {
+    position: sticky;
+    top: calc(var(--header-h) + var(--space-4));
+    align-self: start;
   }
 
   .media {
-    min-height: 100%;
+    height: min(70vh, 36rem);
+    min-height: 28rem;
+  }
+}
+
+@media (max-width: 959px) {
+  .media {
+    border-radius: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media:hover img,
+  .list a:hover {
+    transform: none;
+    padding-left: 0;
   }
 }

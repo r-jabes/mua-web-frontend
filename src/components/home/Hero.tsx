@@ -22,6 +22,7 @@ export function Hero() {
           {hero.headline}
         </h1>
         <p className={styles.support}>{hero.support}</p>
+        <div className={styles.rule} aria-hidden />
         <div className={styles.actions}>
           <Button href={hero.primaryCta.href} variant="primary">
             {hero.primaryCta.label}
@@ -31,6 +32,7 @@ export function Hero() {
           </Button>
         </div>
       </div>
+      <div className={styles.edge} aria-hidden />
     </section>
   );
 }
