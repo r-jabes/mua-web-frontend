@@ -193,7 +193,7 @@
 }
 
 .cardLink span {
-  color: var(--mua-orange-strong);
+  color: var(--mua-orange);
   font-weight: 700;
   font-size: var(--text-sm);
 }
@@ -569,6 +569,7 @@
   padding: var(--space-8) 0;
   background: var(--mua-navy);
   color: var(--mua-white);
+  box-shadow: inset 0 3px 0 0 var(--mua-orange);
 }
 
 .ctaInner {

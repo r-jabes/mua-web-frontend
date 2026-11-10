@@ -11,7 +11,7 @@
 }
 
 .copy .eyebrow {
-  color: #ffb089;
+  color: var(--mua-orange);
 }
 
 .copy .section-title {
@@ -48,7 +48,7 @@
 }
 
 .list a:hover {
-  color: #ffb089;
+  color: var(--mua-orange);
   padding-left: 0.4rem;
 }
 

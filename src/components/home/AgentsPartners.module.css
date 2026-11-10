@@ -19,7 +19,7 @@
 
 .points li {
   padding-left: 1rem;
-  border-left: 2px solid var(--mua-blue);
+  border-left: 2px solid var(--mua-orange);
   color: var(--mua-muted);
 }
 

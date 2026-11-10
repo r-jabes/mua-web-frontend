@@ -59,7 +59,7 @@
   font-weight: 800;
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: #ffb089;
+  color: var(--mua-orange);
 }
 
 .title {
@@ -81,8 +81,8 @@
 }
 
 .rule {
-  width: 3.5rem;
-  height: 2px;
+  width: 4.25rem;
+  height: 3px;
   margin-top: var(--space-5);
   background: var(--mua-orange);
 }

@@ -1,8 +1,11 @@
 :root {
   --mua-blue: #0033a1;
+  /* Official brand orange (logo mark / action) */
   --mua-orange: #ff671d;
-  /* AA-safe orange for small text / solid fills on light or white type */
-  --mua-orange-strong: #b45309;
+  --mua-orange-hover: #e55a12;
+  /* AA-safer orange for small text on light surfaces */
+  --mua-orange-strong: #c24e10;
+  --mua-orange-soft: rgb(255 103 29 / 10%);
   --mua-navy: #0b1f4d;
   --mua-blue-600: #0033a0;
   --mua-blue-400: #2a7de1;
@@ -139,7 +142,7 @@ input {
   top: -100px;
   z-index: 1000;
   padding: 0.75rem 1rem;
-  background: var(--mua-orange-strong);
+  background: var(--mua-orange);
   color: var(--mua-white);
   font-weight: 700;
   border-radius: var(--radius-md);
@@ -165,7 +168,7 @@ input {
   font-weight: 700;
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: var(--mua-orange-strong);
+  color: var(--mua-orange);
 }
 
 .section-title {

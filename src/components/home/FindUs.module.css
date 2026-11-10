@@ -1,6 +1,7 @@
 .section {
   padding: var(--section-y) 0;
   background: var(--mua-mist);
+  border-top: 1px solid var(--mua-line);
 }
 
 .grid {
@@ -23,6 +24,10 @@
   color: var(--mua-blue);
   font-weight: 700;
   text-decoration: none;
+}
+
+.meta a:hover {
+  color: var(--mua-orange);
 }
 
 .note {

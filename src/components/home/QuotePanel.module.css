@@ -1,7 +1,9 @@
 .section {
   padding: var(--section-y) 0;
-  background: var(--mua-white);
-  border-top: 1px solid var(--mua-line);
+  background:
+    linear-gradient(180deg, var(--mua-orange-soft), transparent 42%),
+    var(--mua-white);
+  border-top: 3px solid var(--mua-orange);
 }
 
 .grid {

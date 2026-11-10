@@ -16,6 +16,12 @@
   font-weight: 700;
   color: var(--mua-blue);
   text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.header a:hover {
+  color: var(--mua-orange);
+  border-bottom-color: currentColor;
 }
 
 .list {

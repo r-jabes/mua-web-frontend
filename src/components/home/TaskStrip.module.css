@@ -1,6 +1,7 @@
 .strip {
   background: var(--mua-mist);
-  border-block: 1px solid var(--mua-line);
+  border-top: 3px solid var(--mua-orange);
+  border-bottom: 1px solid var(--mua-line);
   padding: var(--space-6) 0;
 }
 
@@ -32,7 +33,7 @@
 }
 
 .item a:hover {
-  color: var(--mua-blue);
+  color: var(--mua-orange-hover);
 }
 
 .title {
@@ -53,7 +54,7 @@
 }
 
 .arrow {
-  color: var(--mua-orange-strong);
+  color: var(--mua-orange);
   font-weight: 700;
 }
 
