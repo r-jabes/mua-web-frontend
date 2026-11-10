@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
 import { VerificationNote } from "@/components/page/VerificationNote";
 import { leadership } from "@/content/company";
 import styles from "@/components/page/page.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Leadership",
   description: leadership.lead,
-};
+  path: "/leadership",
+});
 
 export default function LeadershipPage() {
   return (

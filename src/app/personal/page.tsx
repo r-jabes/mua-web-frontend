@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 import { HubCards } from "@/components/page/HubCards";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
@@ -6,11 +7,12 @@ import { VerificationNote } from "@/components/page/VerificationNote";
 import { personalHub } from "@/content/products";
 import styles from "@/components/page/page.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Personal Insurance",
-  description:
-    "Explore verified personal covers from MUA Insurance Rwanda — motor, domestic package and travel.",
-};
+  description: "Explore verified personal covers from MUA Insurance Rwanda — motor, domestic package and travel.",
+  path: "/personal",
+  image: "/images/hero-motor.jpg",
+});
 
 export default function PersonalHubPage() {
   return (

@@ -86,11 +86,18 @@ export function Header() {
                 key={item.label}
                 onMouseEnter={() => setOpenMenu(item.label)}
                 onMouseLeave={() => setOpenMenu(null)}
+                onFocusCapture={() => setOpenMenu(item.label)}
+                onBlurCapture={(event) => {
+                  if (!event.currentTarget.contains(event.relatedTarget as Node)) {
+                    setOpenMenu(null);
+                  }
+                }}
               >
                 <button
                   type="button"
                   className={styles.trigger}
                   aria-expanded={expanded}
+                  aria-haspopup="true"
                   aria-controls={`${menuId}-${item.label}`}
                   onClick={() =>
                     setOpenMenu((current) =>
@@ -105,11 +112,15 @@ export function Header() {
                   <div
                     className={styles.panel}
                     id={`${menuId}-${item.label}`}
-                    role="region"
+                    role="menu"
                     aria-label={`${item.label} menu`}
                   >
                     {item.children.map((child) => (
-                      <Link key={child.href} href={child.href}>
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        role="menuitem"
+                      >
                         {child.label}
                       </Link>
                     ))}

@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
 import { legal } from "@/content/support";
 import styles from "@/components/page/page.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: legal.cookies.title,
   description: legal.cookies.lead,
-};
+  path: "/cookie-policy",
+});
 
 export default function CookiePolicyPage() {
   return (

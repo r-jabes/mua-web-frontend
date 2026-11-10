@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
 import { StepsList } from "@/components/page/StepsList";
@@ -6,10 +7,11 @@ import { VerificationNote } from "@/components/page/VerificationNote";
 import { agentsPage } from "@/content/company";
 import styles from "@/components/page/page.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Agents and partners",
   description: agentsPage.lead,
-};
+  path: "/agents",
+});
 
 export default function AgentsPage() {
   return (

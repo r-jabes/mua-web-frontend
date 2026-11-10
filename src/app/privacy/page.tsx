@@ -3,12 +3,15 @@ import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
 import { VerificationNote } from "@/components/page/VerificationNote";
 import { legal } from "@/content/support";
+import { buildPageMetadata } from "@/lib/seo";
 import styles from "@/components/page/page.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: legal.privacy.title,
   description: legal.privacy.lead,
-};
+  path: "/privacy",
+  noIndex: true,
+});
 
 export default function PrivacyPage() {
   return (

@@ -19,7 +19,7 @@ export function HubCards({ items }: Props) {
         <Link key={item.href} href={item.href} className={styles.cardLink}>
           <h3>{item.title}</h3>
           <p>{item.description}</p>
-          <span>Learn more →</span>
+          <span>Explore {item.title} →</span>
         </Link>
       ))}
     </div>

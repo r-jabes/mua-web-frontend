@@ -41,7 +41,7 @@ function Chapter({
         ) : null}
         <div className={styles.actions}>
           <Button href={product.links[0].href} variant="secondary">
-            Learn more
+            View {product.title}
           </Button>
           <Button href="/#quote" variant="text">
             Get a quote →

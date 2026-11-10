@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
 import { VerificationNote } from "@/components/page/VerificationNote";
 import { values } from "@/content/company";
 import styles from "@/components/page/page.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Vision, purpose and values",
   description: values.vision,
-};
+  path: "/our-vision-and-purpose",
+});
 
 export default function ValuesPage() {
   return (

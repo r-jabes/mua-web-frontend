@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { PageCta } from "@/components/page/PageCta";
@@ -6,10 +7,11 @@ import { PageHero } from "@/components/page/PageHero";
 import { newsArticles } from "@/content/news";
 import styles from "@/components/page/page.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "News",
   description: "Community, partners and company updates from MUA Insurance Rwanda.",
-};
+  path: "/news/blog",
+});
 
 export default function NewsIndexPage() {
   return (

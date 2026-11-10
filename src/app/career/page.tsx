@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
 import { StepsList } from "@/components/page/StepsList";
 import { careers } from "@/content/company";
 import styles from "@/components/page/page.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Careers",
   description: careers.lead,
-};
+  path: "/career",
+});
 
 export default function CareersPage() {
   return (

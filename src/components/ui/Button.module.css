@@ -32,12 +32,12 @@
 }
 
 .primary {
-  background: var(--mua-orange);
+  background: var(--mua-orange-strong);
   color: var(--mua-white);
 }
 
 .primary:hover {
-  background: #eb5d1b;
+  background: #9a3412;
   color: var(--mua-white);
 }
 

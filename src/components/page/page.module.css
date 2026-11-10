@@ -193,7 +193,7 @@
 }
 
 .cardLink span {
-  color: var(--mua-orange);
+  color: var(--mua-orange-strong);
   font-weight: 700;
   font-size: var(--text-sm);
 }

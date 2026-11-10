@@ -77,6 +77,7 @@ export function Footer() {
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${item.label} (opens in a new tab)`}
             >
               {item.label}
             </a>

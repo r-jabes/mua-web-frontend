@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
 import { VerificationNote } from "@/components/page/VerificationNote";
 import { customerCare } from "@/content/support";
 import styles from "@/components/page/page.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Customer Care",
   description: customerCare.lead,
-};
+  path: "/customer-care",
+});
 
 export default function CustomerCarePage() {
   return (

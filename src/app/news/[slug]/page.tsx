@@ -3,7 +3,9 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { getNews, newsArticles } from "@/content/news";
+import { articleJsonLd, buildPageMetadata } from "@/lib/seo";
 import styles from "@/components/page/page.module.css";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -16,7 +18,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = getNews(slug);
   if (!article) return { title: "News" };
-  return { title: article.title, description: article.summary };
+  return buildPageMetadata({
+    title: article.title,
+    description: article.summary,
+    path: `/news/${article.slug}`,
+    image: article.image.src,
+    type: "article",
+  });
 }
 
 export default async function NewsArticlePage({ params }: Props) {
@@ -26,6 +34,15 @@ export default async function NewsArticlePage({ params }: Props) {
 
   return (
     <main id="main">
+      <JsonLd
+        data={articleJsonLd({
+          title: article.title,
+          description: article.summary,
+          path: `/news/${article.slug}`,
+          image: article.image.src,
+          category: article.category,
+        })}
+      />
       <PageHero
         eyebrow={article.category}
         title={article.title}
@@ -48,11 +65,11 @@ export default async function NewsArticlePage({ params }: Props) {
               priority
             />
           </div>
-          <div className={styles.prose}>
+          <article className={styles.prose}>
             {article.body.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-          </div>
+          </article>
         </div>
       </section>
 

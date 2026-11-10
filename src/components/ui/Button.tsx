@@ -12,6 +12,15 @@ type Props = {
   onClick?: () => void;
 };
 
+function isExternal(href: string) {
+  return (
+    href.startsWith("http://") ||
+    href.startsWith("https://") ||
+    href.startsWith("mailto:") ||
+    href.startsWith("tel:")
+  );
+}
+
 export function Button({
   href,
   children,
@@ -29,11 +38,20 @@ export function Button({
     .filter(Boolean)
     .join(" ");
 
-  const isHash = href.startsWith("#") || href.startsWith("/#");
+  const hashOrExternal =
+    href.startsWith("#") || href.startsWith("/#") || isExternal(href);
 
-  if (isHash) {
+  if (hashOrExternal) {
+    const externalHttp = href.startsWith("http://") || href.startsWith("https://");
     return (
-      <a href={href} className={classes} onClick={onClick}>
+      <a
+        href={href}
+        className={classes}
+        onClick={onClick}
+        {...(externalHttp
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
+      >
         {children}
       </a>
     );

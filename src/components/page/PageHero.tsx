@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/seo";
 import styles from "./page.module.css";
 
 type Crumb = { label: string; href?: string };
@@ -26,32 +28,41 @@ export function PageHero({
 }: Props) {
   return (
     <header className={`${styles.hero} ${image ? "" : styles.heroPlain}`}>
+      {crumbs?.length ? <JsonLd data={breadcrumbJsonLd(crumbs)} /> : null}
       {image ? (
         <>
           <div className={styles.heroMedia}>
-            <Image src={image.src} alt={image.alt} fill priority sizes="100vw" />
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              priority
+              sizes="100vw"
+            />
           </div>
           <div className={styles.heroScrim} aria-hidden />
         </>
       ) : null}
       <div className={styles.heroInner}>
         {crumbs?.length ? (
-          <ol className={styles.breadcrumb}>
-            {crumbs.map((crumb, index) => (
-              <li key={`${crumb.label}-${index}`}>
-                {index > 0 ? (
-                  <span className={styles.breadcrumbSep} aria-hidden>
-                    /
-                  </span>
-                ) : null}
-                {crumb.href ? (
-                  <Link href={crumb.href}>{crumb.label}</Link>
-                ) : (
-                  <span aria-current="page">{crumb.label}</span>
-                )}
-              </li>
-            ))}
-          </ol>
+          <nav aria-label="Breadcrumb">
+            <ol className={styles.breadcrumb}>
+              {crumbs.map((crumb, index) => (
+                <li key={`${crumb.label}-${index}`}>
+                  {index > 0 ? (
+                    <span className={styles.breadcrumbSep} aria-hidden>
+                      /
+                    </span>
+                  ) : null}
+                  {crumb.href ? (
+                    <Link href={crumb.href}>{crumb.label}</Link>
+                  ) : (
+                    <span aria-current="page">{crumb.label}</span>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </nav>
         ) : null}
         {eyebrow ? <p className={styles.heroEyebrow}>{eyebrow}</p> : null}
         <h1 className={styles.heroTitle}>{title}</h1>

@@ -1,6 +1,8 @@
 :root {
   --mua-blue: #0033a1;
   --mua-orange: #ff671d;
+  /* AA-safe orange for small text / solid fills on light or white type */
+  --mua-orange-strong: #b45309;
   --mua-navy: #0b1f4d;
   --mua-blue-600: #0033a0;
   --mua-blue-400: #2a7de1;
@@ -116,6 +118,12 @@ input {
   outline-offset: 3px;
 }
 
+.theme-inverse :focus-visible,
+.hero :focus-visible,
+[class*="cta"] :focus-visible {
+  outline-color: #ffb089;
+}
+
 .theme-inverse {
   color: var(--mua-white);
   background: var(--mua-navy);
@@ -131,7 +139,7 @@ input {
   top: -100px;
   z-index: 1000;
   padding: 0.75rem 1rem;
-  background: var(--mua-orange);
+  background: var(--mua-orange-strong);
   color: var(--mua-white);
   font-weight: 700;
   border-radius: var(--radius-md);
@@ -157,7 +165,7 @@ input {
   font-weight: 700;
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: var(--mua-orange);
+  color: var(--mua-orange-strong);
 }
 
 .section-title {
