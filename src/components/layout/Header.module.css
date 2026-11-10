@@ -1,0 +1,252 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgb(247 248 252 / 94%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color var(--dur-2) var(--ease-standard),
+    box-shadow var(--dur-2) var(--ease-standard),
+    background-color var(--dur-2) var(--ease-standard);
+}
+
+.scrolled {
+  border-bottom-color: var(--mua-line);
+  box-shadow: var(--shadow-1);
+  background: rgb(255 255 255 / 96%);
+}
+
+.inner {
+  width: min(100% - (var(--gutter) * 2), var(--container-wide));
+  margin-inline: auto;
+  min-height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logo img {
+  width: auto;
+  height: 2.25rem;
+}
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.item {
+  position: relative;
+}
+
+.trigger,
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 2.5rem;
+  padding: 0.35rem 0.55rem;
+  border: 0;
+  background: transparent;
+  color: var(--mua-ink);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.trigger:hover,
+.link:hover {
+  color: var(--mua-blue);
+}
+
+.chevron {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+  opacity: 0.7;
+}
+
+.panel {
+  position: absolute;
+  top: calc(100% + 0.55rem);
+  left: 0;
+  min-width: 16rem;
+  padding: var(--space-3);
+  background: var(--mua-white);
+  border: 1px solid var(--mua-line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-2);
+  display: grid;
+  gap: 0.15rem;
+}
+
+.panel a {
+  display: block;
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--mua-ink);
+}
+
+.panel a:hover {
+  background: var(--mua-mist);
+  color: var(--mua-blue);
+}
+
+.utility {
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.menuBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--mua-line);
+  border-radius: var(--radius-md);
+  background: var(--mua-white);
+  cursor: pointer;
+}
+
+.menuBtn span {
+  display: block;
+  width: 1.1rem;
+  height: 1.5px;
+  background: var(--mua-ink);
+  position: relative;
+}
+
+.menuBtn span::before,
+.menuBtn span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--mua-ink);
+}
+
+.menuBtn span::before {
+  top: -5px;
+}
+
+.menuBtn span::after {
+  top: 5px;
+}
+
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgb(11 31 77 / 45%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-2) var(--ease-standard);
+}
+
+.drawerOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sheet {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: min(100%, 22rem);
+  background: var(--mua-white);
+  padding: var(--space-5) var(--space-4) var(--space-6);
+  transform: translateX(100%);
+  transition: transform var(--dur-3) var(--ease-out);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  overflow: auto;
+}
+
+.drawerOpen .sheet {
+  transform: translateX(0);
+}
+
+.sheetTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.close {
+  border: 0;
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--mua-ink);
+}
+
+.mobileNav {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.mobileNav details {
+  border-bottom: 1px solid var(--mua-line);
+}
+
+.mobileNav summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.9rem 0;
+  font-weight: 700;
+}
+
+.mobileNav summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobileNav a {
+  display: block;
+  padding: 0.55rem 0;
+  text-decoration: none;
+  color: var(--mua-muted);
+  font-weight: 600;
+}
+
+.mobilePins {
+  margin-top: auto;
+  display: grid;
+  gap: var(--space-2);
+  position: sticky;
+  bottom: 0;
+  padding-top: var(--space-4);
+  background: linear-gradient(to top, var(--mua-white) 70%, transparent);
+}
+
+@media (min-width: 1024px) {
+  .nav,
+  .utility {
+    display: flex;
+  }
+
+  .menuBtn {
+    display: none;
+  }
+}

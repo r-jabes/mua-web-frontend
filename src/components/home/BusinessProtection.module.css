@@ -1,0 +1,85 @@
+.section {
+  background: var(--mua-navy);
+  color: var(--mua-white);
+  padding: var(--section-y) 0;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-7);
+  align-items: stretch;
+}
+
+.copy .eyebrow {
+  color: var(--mua-orange);
+}
+
+.copy .section-title {
+  color: var(--mua-white);
+}
+
+.copy .section-lead {
+  color: #b0c0e2;
+}
+
+.list {
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0;
+}
+
+.list a {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid rgb(255 255 255 / 14%);
+  text-decoration: none;
+  color: var(--mua-white);
+  transition: color var(--dur-1) var(--ease-standard);
+}
+
+.list li:last-child a {
+  border-bottom: 1px solid rgb(255 255 255 / 14%);
+}
+
+.list a:hover {
+  color: var(--mua-orange);
+}
+
+.list strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 700;
+}
+
+.list span {
+  color: #b0c0e2;
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.cta {
+  margin-top: var(--space-6);
+}
+
+.media {
+  position: relative;
+  min-height: 20rem;
+  overflow: hidden;
+}
+
+.media img {
+  object-fit: cover;
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .media {
+    min-height: 100%;
+  }
+}
