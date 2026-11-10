@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
-import { VerificationNote } from "@/components/page/VerificationNote";
 import type { ProductPage } from "@/content/products";
 import styles from "./page.module.css";
 
@@ -72,12 +71,6 @@ export function ProductView({ product }: { product: ProductPage }) {
                   ))}
                 </ul>
               </div>
-
-              {product.notes?.map((note) => (
-                <VerificationNote key={note.text} tone={note.kind}>
-                  {note.text}
-                </VerificationNote>
-              ))}
             </aside>
           </div>
 

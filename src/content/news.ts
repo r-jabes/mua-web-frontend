@@ -16,8 +16,7 @@ export const newsArticles: NewsArticle[] = [
       "MUA Insurance Rwanda commemorated the 1994 Genocide against the Tutsis with visits to Ntarama and Nyanza.",
     body: [
       "MUA Insurance Rwanda Ltd marked the annual period of remembrance for the 1994 Genocide against the Tutsis with organised visits to Ntarama and Nyanza.",
-      "The published news feature records the company’s participation in commemorative activity with colleagues and community partners.",
-      "Full photo coverage and extended narrative remain on the original mua.rw article until richer media is migrated.",
+      "The company participated in commemorative activity with colleagues and community partners.",
     ],
     image: {
       src: "/images/news-3.jpg",
@@ -64,8 +63,8 @@ export const newsArticles: NewsArticle[] = [
     summary:
       "MUA Rwanda hosted leadership transition moments with the Group Chief Executive Officer.",
     body: [
-      "MUA Insurance Rwanda published a news feature covering the welcome of a new Group CEO and farewell to the outgoing Group CEO.",
-      "The article is retained here as a verified news destination from the Rwanda site inventory. Extended remarks remain on the source article.",
+      "MUA Insurance Rwanda welcomed the new Group CEO and bid farewell to the outgoing Group CEO.",
+      "The occasion marked continuity and shared ambition across the MUA group.",
     ],
     image: {
       src: "/images/news-1.jpg",
@@ -76,11 +75,10 @@ export const newsArticles: NewsArticle[] = [
   {
     slug: "message-mua-shareholders",
     title: "Message to MUA shareholders",
-    summary:
-      "Shareholder communication published via the Rwanda newsroom (relevance to local audiences may vary).",
+    summary: "A message shared with MUA shareholders through the company newsroom.",
     body: [
-      "A shareholder message was published through the mua.rw newsroom during the Phase 0 audit window.",
-      "Confirm retention for the Rwanda audience, as some shareholder notices are primarily group-oriented.",
+      "MUA shared an update with shareholders through its newsroom channels.",
+      "For investor materials, visit the Investors page for group reports and related resources.",
     ],
     image: {
       src: "/images/news-3.jpg",

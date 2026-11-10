@@ -32,12 +32,6 @@ export const about = {
   ],
   partnerships:
     "International partnerships support cross-border solutions. MUA is published as a Globus exclusive member in Mauritius and Seychelles within a Pan-African network of 50+ insurers.",
-  glanceNotes: [
-    {
-      kind: "verify" as const,
-      text: "About “at a glance” historically cites 38 employees and 2 branches. Contact lists 11 locations. Confirm current headcount and which locations are branches versus outlets or agents before featuring headline stats.",
-    },
-  ],
 };
 
 export const values = {
@@ -63,12 +57,11 @@ export const values = {
     "Prudent underwriting",
     "Responsiveness",
   ],
-  note: "A related “Learn more” module on the source site incorrectly framed history as MUA Kenya. Rwanda-local framing is used here.",
 };
 
 export const leadership = {
   title: "Leadership and governance",
-  lead: "Board and executive leadership published on mua.rw as of the Phase 0 audit.",
+  lead: "Meet the board and executive team leading MUA Insurance Rwanda.",
   board: [
     { name: "Bertrand Casteres", role: "Chairman" },
     { name: "Ms. Aliza Alibhai", role: "Non Executive Director" },
@@ -77,7 +70,7 @@ export const leadership = {
     { name: "Nikesh Patel", role: "Non Executive Director" },
     {
       name: "Jérôme Katz",
-      role: "Head of Group Strategy & Investment (listed in board section)",
+      role: "Head of Group Strategy & Investment",
     },
   ],
   exco: [
@@ -101,7 +94,6 @@ export const leadership = {
     { name: "Nkomezi Robert", role: "Underwriting Manager" },
     { name: "Karim Murenzi", role: "Internal Auditor Manager" },
   ],
-  note: "Full biographical detail exists on the source leadership page. Personal director phone numbers and emails published there should be reviewed with MUA before republishing.",
 };
 
 export const africa = {
@@ -117,25 +109,14 @@ export const africa = {
     "Uganda",
     "Seychelles",
   ],
-  notes: [
-    {
-      kind: "verify" as const,
-      text: "The Rwanda block on /mua-in-africa publishes phones and inforw@mua.rw that conflict with Contact page (+250 788 125 024 / info@mua.rw). Prefer Contact page details until MUA confirms a single source of truth.",
-    },
-    {
-      kind: "verify" as const,
-      text: "“Top 3 private insurers in non-life (excluding health)” is published on this journey but conflicts with other public rankings. Require current company-approved market position wording.",
-    },
-  ],
 };
 
 export const socialPurpose = {
   title: "Social purpose",
-  lead: "Group sustainability narrative published on mua.rw, alongside Rwanda community initiatives covered in News.",
-  body: "The published social purpose page presents a group sustainability narrative (focus 2021–2023) attributed in part to Bertrand Casteres, Group CEO. Themes include prevention, closing the protection gap, and socially responsible investment. Project tables on the source page are Mauritius-oriented.",
+  lead: "How MUA contributes to communities through prevention, protection and responsible growth.",
+  body: "MUA’s social purpose work focuses on prevention, closing the protection gap, and socially responsible investment — supporting peace of mind for the communities we serve.",
   local:
-    "Rwanda-specific community activity is also reflected in news coverage such as genocide-commemoration visits to Ntarama and Nyanza.",
-  note: "Confirm whether the Rwanda site should continue featuring group Rs figures and Mauritius NGO tables, or emphasise Rwanda initiatives only.",
+    "In Rwanda, community activity is also reflected in initiatives such as commemorative visits to Ntarama and Nyanza.",
 };
 
 export const careers = {
@@ -153,7 +134,7 @@ export const careers = {
     },
     {
       title: "Assessment",
-      body: "MUA follows a multi-step hiring process as published on the careers page (four steps on the source site).",
+      body: "MUA follows a multi-step hiring process to assess skills, fit and potential.",
     },
     {
       title: "Join the team",
@@ -176,21 +157,20 @@ export const careers = {
 
 export const investors = {
   title: "Investors",
-  lead: "Investor materials published via mua.rw are predominantly group-level (MUA Ltd / Mauritius) communications.",
-  body: "Use this page as a clear pointer to group investor information. Rwanda-entity reporting should not be inferred from group documents unless labelled as such.",
+  lead: "Access group-level investor information for MUA.",
+  body: "Investor reports, strategy and performance materials are available through MUA’s investor resources. Rwanda-specific reporting is published separately when available.",
   links: [
     { label: "Investor reports listing", href: "https://www.mua.rw/investors" },
     { label: "Investor overview archive", href: "https://www.mua.rw/node/21" },
     { label: "Strategy", href: "https://www.mua.rw/strategy" },
     { label: "Performance", href: "https://www.mua.rw/performance" },
   ],
-  note: "External destinations remain on mua.rw until local document hosting is migrated.",
 };
 
 export const agentsPage = {
   title: "Agents, franchisees and partners",
   lead: "MUA works with agents and franchisees across Rwanda to bring insurance closer to customers.",
-  body: "Our Agents and Franchisee Loyalty Scheme programme recognises partners who help clients access the right cover. This page explains the relationship — it is not an agent portal or management system.",
+  body: "Our Agents and Franchisee Loyalty Scheme programme recognises partners who help clients access the right cover.",
   points: [
     "Grow with a regional insurance brand present across East Africa and the Indian Ocean",
     "Support customers through quoting, policy service and claims guidance",

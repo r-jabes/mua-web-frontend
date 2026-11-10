@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
-import { VerificationNote } from "@/components/page/VerificationNote";
 import { contactPage } from "@/content/support";
 import styles from "@/components/page/page.module.css";
 
@@ -71,8 +70,7 @@ export default function ContactPage() {
             <p className="eyebrow">Locations</p>
             <h2 className="section-title">Offices and points of presence</h2>
             <p className="section-lead">
-              Published contacts across Kigali and regional points. Confirm branch versus outlet status
-              with MUA where noted.
+              Offices and points of presence across Kigali and regional locations.
             </p>
           </div>
           <div className={styles.locations}>
@@ -86,9 +84,6 @@ export default function ContactPage() {
                 </p>
               </article>
             ))}
-          </div>
-          <div className={styles.noteStack}>
-            <VerificationNote>{contactPage.note}</VerificationNote>
           </div>
         </div>
       </section>

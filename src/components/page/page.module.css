@@ -392,28 +392,6 @@
   font-size: var(--text-sm);
 }
 
-.noteStack {
-  display: grid;
-  gap: var(--space-3);
-  margin-top: var(--space-6);
-}
-
-.note {
-  padding: var(--space-4) 0;
-  border-top: 1px solid #f0c9a8;
-  color: var(--mua-ink);
-  font-size: var(--text-sm);
-  line-height: var(--leading-relaxed);
-}
-
-.note strong {
-  color: var(--mua-orange);
-}
-
-.infoNote {
-  border-top-color: #b9c8ea;
-}
-
 .steps {
   margin: 0;
   padding: 0;

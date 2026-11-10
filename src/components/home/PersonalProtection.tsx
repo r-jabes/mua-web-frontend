@@ -74,8 +74,8 @@ export function PersonalProtection() {
             Protect what matters at home and on the move
           </h2>
           <p className="section-lead">
-            Explore confirmed personal covers published by MUA Insurance Rwanda —
-            motor, domestic package and travel.
+            Explore personal covers from MUA Insurance Rwanda — motor, domestic
+            package and travel.
           </p>
         </header>
 

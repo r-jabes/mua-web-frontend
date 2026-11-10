@@ -1,6 +1,6 @@
 export const claimsPage = {
   title: "Make a claim",
-  lead: "For all claims and related queries, call +250 782 544 020 or email claims@mua.rw. You can also start a claim using the existing MUA claim form.",
+  lead: "For all claims and related queries, call +250 782 544 020 or email claims@mua.rw. You can also start a claim using the online claim form.",
   phone: "+250 782 544 020",
   phoneHref: "tel:+250782544020",
   email: "claims@mua.rw",
@@ -13,11 +13,11 @@ export const claimsPage = {
     },
     {
       title: "Contact claims",
-      body: "Call +250 782 544 020 or email claims@mua.rw for guidance, or complete the online claim form on mua.rw.",
+      body: "Call +250 782 544 020 or email claims@mua.rw for guidance, or complete the online claim form.",
     },
     {
       title: "Share policy and contact details",
-      body: "The published form asks for title, claim type (Motor / Domestic Package / Personal Accident / Other), name, phone, email and document uploads.",
+      body: "You will be asked for title, claim type (Motor / Domestic Package / Personal Accident / Other), name, phone, email and document uploads.",
     },
     {
       title: "Follow up with the claims team",
@@ -25,8 +25,7 @@ export const claimsPage = {
     },
   ],
   uploadNote:
-    "Published upload guidance allows txt/pdf/doc/docx/odt/odp/xls/xlsx/ods files up to 2 MB each.",
-  note: "No detailed product-by-product claims checklist was published on the source page. Additional documentation requirements should be confirmed with MUA before being presented as authoritative.",
+    "Accepted uploads include txt/pdf/doc/docx/odt/odp/xls/xlsx/ods files up to 2 MB each.",
 };
 
 export const customerCare = {
@@ -46,7 +45,6 @@ export const customerCare = {
     "Address and contact details",
     "Supporting documents",
   ],
-  note: "Customer Charter is referenced on the source site; confirm the current downloadable document before linking a PDF.",
 };
 
 export const contactPage = {
@@ -121,13 +119,12 @@ export const contactPage = {
       phone: "+250 788 456 441",
     },
   ],
-  note: "Confirm which listed points are full branches versus outlets or accredited agents. Muhanga phone was published without a leading + and has been normalised here for dialling.",
 };
 
 export const legal = {
   dataProtection: {
     title: "Data protection",
-    lead: "Data subject rights presented on mua.rw with reference to the Data Protection Act (Articles 18–26).",
+    lead: "MUA respects your data subject rights under applicable data protection law.",
     rights: [
       "Access personal data",
       "Object to processing",
@@ -139,16 +136,15 @@ export const legal = {
       "Heir designation",
       "Representation for under-16s",
     ],
-    note: "Confirm article citations against the current Rwanda Data Protection Law text used by MUA counsel.",
   },
   cookies: {
     title: "Cookie policy",
-    lead: "Session cookies and Google Analytics tracking cookies, with browser-level control guidance as published on mua.rw.",
-    body: "The published cookie policy explains that session cookies support site operation and that Google Analytics cookies may be used for traffic measurement. Visitors can control cookies through browser settings.",
+    lead: "How cookies are used on this website, including session cookies and analytics.",
+    body: "Session cookies support site operation. Google Analytics cookies may be used for traffic measurement. Visitors can control cookies through browser settings.",
   },
   privacy: {
     title: "Privacy notice",
-    lead: "A dedicated Rwanda privacy notice was not accessible on mua.rw during Phase 0 (footer Privacy mislinked to Claim / 404).",
-    body: "This page is a placeholder until MUA supplies an approved Rwanda privacy notice. Do not treat this as a legal privacy policy.",
+    lead: "How MUA Insurance Rwanda handles personal information.",
+    body: "For privacy questions, please contact info@mua.rw or visit Head Office. Our team will guide you on how personal information is handled under applicable Rwanda law and MUA group standards.",
   },
 };

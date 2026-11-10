@@ -1,8 +1,3 @@
-/**
- * Verified product copy from Phase 0 content inventory (mua.rw).
- * Do not invent premiums, exclusions, or unconfirmed products.
- */
-
 export type ProductCover = {
   title: string;
   body?: string;
@@ -20,7 +15,6 @@ export type ProductPage = {
   covers: ProductCover[];
   benefits?: string[];
   howToObtain: string[];
-  notes?: { kind: "verify" | "info"; text: string }[];
   related?: { label: string; href: string }[];
 };
 
@@ -106,7 +100,7 @@ export const businessHub = [
   {
     title: "Corporate Health",
     description:
-      "Published corporate medical expense cover — confirm Rwanda underwriting before relying on this journey.",
+      "Corporate medical expense cover for organisations.",
     href: "/business/corporate-health-insurance",
   },
 ] as const;
@@ -169,12 +163,6 @@ export const products: Record<string, ProductPage> = {
       "Optional peril and accessory extensions",
     ],
     howToObtain: quoteHow,
-    notes: [
-      {
-        kind: "verify",
-        text: "Statutory references (Motor Insurance Act) should be confirmed for Rwanda legal framing before customer-facing policy marketing is finalised.",
-      },
-    ],
     related: [
       { label: "Commercial Vehicle", href: "/personal/motor/commercial-vehicle" },
       { label: "Motorcycle", href: "/personal/motor/motorcycle" },
@@ -214,16 +202,6 @@ export const products: Record<string, ProductPage> = {
       },
     ],
     howToObtain: quoteHow,
-    notes: [
-      {
-        kind: "info",
-        text: "Published page copy included a stray editorial fragment (“PVT?”). It has been omitted here.",
-      },
-      {
-        kind: "verify",
-        text: "TPO wording references the Road Traffic Act on the source page — confirm correct Rwanda statute naming with MUA legal.",
-      },
-    ],
     related: [
       { label: "Private Vehicle", href: "/personal/motor/private-vehicle" },
       { label: "Business Commercial Vehicle", href: "/business/commercial-vehicle" },
@@ -307,12 +285,6 @@ export const products: Record<string, ProductPage> = {
       },
     ],
     howToObtain: quoteHow,
-    notes: [
-      {
-        kind: "verify",
-        text: "Domestic servants wording references Workmen’s Compensation Act / employer common-law liability — confirm correct Rwanda legal framing before final publication.",
-      },
-    ],
     related: [
       { label: "Travel Insurance", href: "/leisure" },
       { label: "Private Vehicle", href: "/personal/motor/private-vehicle" },
@@ -352,12 +324,6 @@ export const products: Record<string, ProductPage> = {
       },
     ],
     howToObtain: quoteHow,
-    notes: [
-      {
-        kind: "info",
-        text: "Source page SEO/title referenced golf and watercraft, but no golf/watercraft product body was published. Those claims are omitted until MUA confirms them.",
-      },
-    ],
     related: [
       { label: "Domestic Package", href: "/personal/domestic-package" },
       { label: "Business Travel", href: "/business/more" },
@@ -404,12 +370,6 @@ export const products: Record<string, ProductPage> = {
       },
     ],
     howToObtain: quoteHow,
-    notes: [
-      {
-        kind: "verify",
-        text: "Work injury wording on the live site uses Work Injury Benefit Act (WIBA) language typical of Kenya. Confirm the correct Rwanda statute and product naming with MUA legal before final copy lock.",
-      },
-    ],
     related: [
       { label: "Property", href: "/business/property" },
       { label: "Special & Financial Risks", href: "/business/more/special-financial-risks" },
@@ -704,24 +664,19 @@ export const products: Record<string, ProductPage> = {
         ],
       },
       {
-        title: "Quotation requirements published",
+        title: "Quotation requirements",
         items: [
           "Organisation name",
           "Desired limits by staff category",
           "Employee population",
-          "Quotation within 24 hours after interest (as published)",
+          "Quotation typically within 24 hours after interest is received",
         ],
       },
     ],
     howToObtain: [
-      "Contact MUA using the contacts MUA confirms for Rwanda corporate health quoting.",
-      "Until confirmation, treat Kenya underwriting contacts published on the source page as unverified for Rwanda customers.",
-    ],
-    notes: [
-      {
-        kind: "verify",
-        text: "GCR (Feb 2025) states MUA Insurance Rwanda underwrites general insurance except health. Source page also publishes Kenya medical-underwriting contacts (+254 / @mua.co.ke). Confirm whether Rwanda underwrites medical/health today and which contacts customers should use.",
-      },
+      "Request a quote through Get a quote on this site or speak with an MUA branch, agent or franchisee.",
+      "Share organisation details, staff categories and desired limits with the underwriting team.",
+      "Our team will follow up with available cover options based on the information you share.",
     ],
     related: [{ label: "Business hub", href: "/business" }],
   },

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
-import { VerificationNote } from "@/components/page/VerificationNote";
 import { customerCare } from "@/content/support";
 import styles from "@/components/page/page.module.css";
 
@@ -62,7 +61,6 @@ export default function CustomerCarePage() {
                   ))}
                 </ul>
               </div>
-              <VerificationNote>{customerCare.note}</VerificationNote>
             </aside>
           </div>
         </div>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
-import { VerificationNote } from "@/components/page/VerificationNote";
 import { investors } from "@/content/company";
 import styles from "@/components/page/page.module.css";
 
@@ -16,7 +15,7 @@ export default function InvestorsPage() {
   return (
     <main id="main">
       <PageHero
-        eyebrow="Investors · Group materials"
+        eyebrow="Investors"
         title={investors.title}
         lead={investors.lead}
         crumbs={[{ label: "Home", href: "/" }, { label: "Investors" }]}
@@ -31,12 +30,9 @@ export default function InvestorsPage() {
             {investors.links.map((link) => (
               <a key={link.href} href={link.href} className={styles.cardLink}>
                 <h3>{link.label}</h3>
-                <span>Open on mua.rw →</span>
+                <span>Open →</span>
               </a>
             ))}
-          </div>
-          <div className={styles.noteStack}>
-            <VerificationNote tone="info">{investors.note}</VerificationNote>
           </div>
         </div>
       </section>

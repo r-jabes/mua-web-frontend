@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
-import { VerificationNote } from "@/components/page/VerificationNote";
 import { leadership } from "@/content/company";
 import styles from "@/components/page/page.module.css";
 
@@ -57,9 +56,6 @@ export default function LeadershipPage() {
                 {"note" in person && person.note ? <p>{person.note}</p> : null}
               </article>
             ))}
-          </div>
-          <div className={styles.noteStack}>
-            <VerificationNote>{leadership.note}</VerificationNote>
           </div>
         </div>
       </section>

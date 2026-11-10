@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
-import { VerificationNote } from "@/components/page/VerificationNote";
 import { africa } from "@/content/company";
 import styles from "@/components/page/page.module.css";
 
@@ -36,13 +35,8 @@ export default function AfricaPage() {
             {africa.countries.map((country) => (
               <div className={styles.block} key={country}>
                 <h3>{country}</h3>
-                <p>Regional MUA presence as published on mua.rw.</p>
+                <p>Part of MUA’s regional presence.</p>
               </div>
-            ))}
-          </div>
-          <div className={styles.noteStack}>
-            {africa.notes.map((note) => (
-              <VerificationNote key={note.text}>{note.text}</VerificationNote>
             ))}
           </div>
         </div>

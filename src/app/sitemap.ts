@@ -2,9 +2,7 @@ import type { MetadataRoute } from "next";
 import { newsArticles } from "@/content/news";
 import { publicRoutes, SITE_URL } from "@/lib/site";
 
-/** Placeholder / gated pages stay reachable but out of the sitemap. */
 const sitemapExcluded = new Set([
-  "/privacy",
   "/business/corporate-health-insurance",
 ]);
 

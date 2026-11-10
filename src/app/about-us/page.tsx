@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
-import { VerificationNote } from "@/components/page/VerificationNote";
 import { about } from "@/content/company";
 import styles from "@/components/page/page.module.css";
 
@@ -62,11 +61,6 @@ export default function AboutPage() {
               </li>
             ))}
           </ol>
-          <div className={styles.noteStack}>
-            {about.glanceNotes.map((note) => (
-              <VerificationNote key={note.text}>{note.text}</VerificationNote>
-            ))}
-          </div>
         </div>
       </section>
 

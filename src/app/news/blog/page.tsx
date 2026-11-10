@@ -19,7 +19,7 @@ export default function NewsIndexPage() {
       <PageHero
         eyebrow="News"
         title="Community, partners and company updates"
-        lead="Selected articles published on mua.rw and retained in the Phase 0 inventory."
+        lead="Community, partner and company updates from MUA Insurance Rwanda."
         crumbs={[{ label: "Home", href: "/" }, { label: "News" }]}
       />
 

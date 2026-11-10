@@ -3,7 +3,6 @@ import { buildPageMetadata } from "@/lib/seo";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
 import { StepsList } from "@/components/page/StepsList";
-import { VerificationNote } from "@/components/page/VerificationNote";
 import { claimsPage } from "@/content/support";
 import styles from "@/components/page/page.module.css";
 
@@ -21,7 +20,7 @@ export default function ClaimsPage() {
         title={claimsPage.title}
         lead={claimsPage.lead}
         crumbs={[{ label: "Home", href: "/" }, { label: "Claims" }]}
-        primaryCta={{ label: "Open claim form on mua.rw", href: claimsPage.formHref }}
+        primaryCta={{ label: "Open claim form", href: claimsPage.formHref }}
         secondaryCta={{ label: "Call claims", href: claimsPage.phoneHref }}
       />
 
@@ -33,8 +32,8 @@ export default function ClaimsPage() {
                 <p className="eyebrow">Process</p>
                 <h2 className="section-title">How claiming works</h2>
                 <p className="section-lead">
-                  Practical guidance based on published claims contacts and form fields. Submission
-                  continues on the existing MUA claim form — this site does not fake a backend.
+                  Follow these steps to prepare your claim, then submit online or speak with our
+                  claims team.
                 </p>
               </div>
               <StepsList steps={claimsPage.steps} />
@@ -53,7 +52,6 @@ export default function ClaimsPage() {
                 <h3>Uploads</h3>
                 <p>{claimsPage.uploadNote}</p>
               </div>
-              <VerificationNote>{claimsPage.note}</VerificationNote>
             </aside>
           </div>
         </div>

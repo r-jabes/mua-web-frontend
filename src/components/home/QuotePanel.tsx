@@ -16,9 +16,8 @@ export function QuotePanel() {
           Choose the cover you need
         </h2>
         <p className="section-lead">
-          Select a product family to continue. Transactional quoting will be
-          connected in a later phase — for now these routes mirror the live MUA
-          catalogue destinations.
+          Select a product family to continue. Our team will follow up with the
+          information you need to protect what matters.
         </p>
         <div className={styles.grid}>
           {quoteOptions.map((option) => (
@@ -29,8 +28,8 @@ export function QuotePanel() {
           ))}
         </div>
         <p className={styles.note}>
-          Health and personal accident quote paths remain gated pending product
-          verification with MUA Rwanda.
+          Looking for another type of cover?{" "}
+          <a href="/contact-us">Contact our team</a> and we will guide you.
         </p>
       </div>
     </section>

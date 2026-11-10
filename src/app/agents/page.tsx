@@ -3,7 +3,6 @@ import { buildPageMetadata } from "@/lib/seo";
 import { PageCta } from "@/components/page/PageCta";
 import { PageHero } from "@/components/page/PageHero";
 import { StepsList } from "@/components/page/StepsList";
-import { VerificationNote } from "@/components/page/VerificationNote";
 import { agentsPage } from "@/content/company";
 import styles from "@/components/page/page.module.css";
 
@@ -51,10 +50,6 @@ export default function AgentsPage() {
                 <h3>How to get started</h3>
               </div>
               <StepsList steps={agentsPage.how} />
-              <VerificationNote tone="info">
-                This page does not introduce an agent-management portal or proposed digital services
-                that are not already published by MUA.
-              </VerificationNote>
             </aside>
           </div>
         </div>

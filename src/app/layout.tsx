@@ -78,7 +78,9 @@ export const metadata: Metadata = {
     images: [siteIdentity.ogImagePath],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [{ url: "/brand/mua-icon.svg", type: "image/svg+xml" }],
+    shortcut: "/brand/mua-icon.svg",
+    apple: "/brand/mua-icon.svg",
   },
 };
 

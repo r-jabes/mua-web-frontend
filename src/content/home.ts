@@ -1,8 +1,3 @@
-/**
- * Homepage content sourced from Phase 0 inventory (mua.rw).
- * Do not invent products, stats, or claims.
- */
-
 export const site = {
   name: "MUA Insurance Rwanda",
   tagline: "Insurance that moves you forward",
