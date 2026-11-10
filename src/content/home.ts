@@ -13,7 +13,7 @@ export const nav = {
   primary: [
     {
       label: "Personal",
-      href: "/#personal",
+      href: "/personal",
       children: [
         { label: "Private Vehicle", href: "/personal/motor/private-vehicle" },
         { label: "Commercial Vehicle", href: "/personal/motor/commercial-vehicle" },
@@ -24,7 +24,7 @@ export const nav = {
     },
     {
       label: "Business",
-      href: "/#business",
+      href: "/business",
       children: [
         { label: "Liability", href: "/business/liability" },
         { label: "Property", href: "/business/property" },
@@ -48,13 +48,14 @@ export const nav = {
     },
     {
       label: "Company",
-      href: "/#company",
+      href: "/about-us",
       children: [
         { label: "About us", href: "/about-us" },
         { label: "Values & purpose", href: "/our-vision-and-purpose" },
         { label: "Leadership", href: "/leadership" },
         { label: "MUA in Africa", href: "/mua-in-africa" },
         { label: "News", href: "/news/blog" },
+        { label: "Agents & partners", href: "/agents" },
       ],
     },
     { label: "Careers", href: "/career" },
@@ -241,8 +242,8 @@ export const agentsPartners = {
   ],
   primaryCta: { label: "Contact our team", href: "/contact-us" },
   secondaryCta: {
-    label: "Read about the loyalty scheme",
-    href: "/news/mua-agents-and-franchisee-loyalty-scheme-program",
+    label: "Agents & partners",
+    href: "/agents",
   },
 } as const;
 

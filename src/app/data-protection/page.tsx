@@ -1,0 +1,45 @@
+import type { Metadata } from "next";
+import { PageCta } from "@/components/page/PageCta";
+import { PageHero } from "@/components/page/PageHero";
+import { VerificationNote } from "@/components/page/VerificationNote";
+import { legal } from "@/content/support";
+import styles from "@/components/page/page.module.css";
+
+export const metadata: Metadata = {
+  title: legal.dataProtection.title,
+  description: legal.dataProtection.lead,
+};
+
+export default function DataProtectionPage() {
+  return (
+    <main id="main">
+      <PageHero
+        eyebrow="Legal"
+        title={legal.dataProtection.title}
+        lead={legal.dataProtection.lead}
+        crumbs={[{ label: "Home", href: "/" }, { label: "Data protection" }]}
+      />
+
+      <section className={styles.section}>
+        <div className="container">
+          <ul className={styles.grid2} style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            {legal.dataProtection.rights.map((right) => (
+              <li key={right} className={styles.block}>
+                <h3>{right}</h3>
+              </li>
+            ))}
+          </ul>
+          <div style={{ marginTop: "var(--space-6)" }}>
+            <VerificationNote>{legal.dataProtection.note}</VerificationNote>
+          </div>
+        </div>
+      </section>
+
+      <PageCta
+        title="Questions about your data?"
+        primary={{ label: "Contact us", href: "/contact-us" }}
+        secondary={{ label: "Cookie policy", href: "/cookie-policy" }}
+      />
+    </main>
+  );
+}
